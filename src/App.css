@@ -1,0 +1,122 @@
+.mystyle {
+    border-radius: 42%!important;
+}
+
+.scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.markdown img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+.intro {
+    position: relative;
+    animation: zoomin 1s linear 1;
+    animation-delay: 1.8s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+h1 {
+    font-size: 4rem !important;
+}
+
+.section__title--intro {
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 0rem;
+    color: #303030;
+    opacity: 1;
+    width: 26.75rem;
+    height: 9rem;
+    position: relative;
+    top: 1.9rem;
+}
+
+.section__title--intro strong {
+    display: block;
+    font-weight: 900;
+}
+
+.section__subtitle {
+    margin: .25rem 0rem;
+    font-size: 1.25rem;
+}
+
+.section__subtitle--intro {
+    text-align: left;
+    font: normal normal normal 2.125rem/3.75rem Source Code Pro;
+    letter-spacing: 0rem;
+    /* color: #1C4B43; */
+    opacity: 1;
+    background: #5bc0de;
+    padding: 0em 1em;
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+@keyframes zoomin {
+    0%{
+        transform: scale(0.5);
+        visibility: visible;
+    }
+    100%{
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+.intro img {
+    height: 313px;
+    width: 313px;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0,0,0, 0.15);
+}
+
+
+@media (min-width: 765px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: max-content min-content;
+    }
+    
+    .intro-img {
+        grid-area: img;
+        min-width: 15.625rem;
+        position: relative;
+        z-index: 2;
+    }    
+    
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        padding-right: 0.9375rem;
+        width: 47.8125rem;
+        height: 3.4375rem;
+    }
+}
+
+@media (max-width: 1520px){
+    #home.intro{
+        right: auto;
+        left: 100px;
+ }
+}
